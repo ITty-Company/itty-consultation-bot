@@ -1,0 +1,32 @@
+services:
+  - type: worker
+    name: chat-bot
+    env: python
+    plan: starter
+    buildCommand: pip install -r requirements.txt
+    startCommand: python bot.py
+    autoDeploy: true
+    envVars:
+      - key: BOT_TOKEN
+        sync: false
+      - key: ADMIN_ID
+        sync: false
+      - key: CONSULTANT_ID
+        sync: false
+      - key: CONSULTANT_USERNAME
+        sync: false
+      - key: USE_AI_API
+        sync: false
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: DEEPSEEK_API_KEY
+        sync: false
+      - key: USE_GOOGLE_SHEETS
+        sync: false
+      - key: GOOGLE_SHEET_ID
+        sync: false
+      - key: GOOGLE_SHEET_NAME
+        sync: false
+      - key: GOOGLE_CREDENTIALS_FILE
+        sync: false
+

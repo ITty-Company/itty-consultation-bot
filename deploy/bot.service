@@ -1,0 +1,35 @@
+[Unit]
+Description=Telegram bot (python-telegram-bot polling)
+After=network.target
+
+[Service]
+Type=simple
+
+# IMPORTANT: set correct paths below
+WorkingDirectory=/opt/chat-bot
+
+# If you use a venv (recommended), point to venv python:
+ExecStart=/opt/chat-bot/venv/bin/python -u bot.py
+
+# Load secrets from .env file
+EnvironmentFile=/opt/chat-bot/.env
+
+# Restart policy
+Restart=always
+RestartSec=3
+
+# Logging
+StandardOutput=journal
+StandardError=journal
+
+# Security hardening (safe defaults)
+NoNewPrivileges=true
+PrivateTmp=true
+
+# Run under a non-root user you create (recommended)
+User=chatbot
+Group=chatbot
+
+[Install]
+WantedBy=multi-user.target
+

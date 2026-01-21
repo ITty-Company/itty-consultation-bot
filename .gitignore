@@ -1,0 +1,39 @@
+# Environment variables
+.env
+env.local
+credentials.json
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+build/
+dist/
+*.egg-info/
+
+# Data files
+bookings.json
+users.json
+chat_history.json
+ai_context.json
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Runtime
+bot.lock
+*.log
+
